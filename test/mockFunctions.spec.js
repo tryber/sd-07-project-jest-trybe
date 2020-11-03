@@ -13,9 +13,29 @@ O foco aqui é a utilização de mock functions.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
+jest.mock('../src/mockFunctions');
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  mockFunctions.add.mockImplementation((a, b) => a + b);
+  mockFunctions.subtract.mockImplementation((a, b) => a - b);
+  mockFunctions.multiply.mockImplementation((a, b) => a * b);
+  mockFunctions.divide.mockImplementation((a, b) => a / b);
+  mockFunctions.power.mockImplementation((n, e) => {
+    if (n === 0) return 1;
+    let powered = n;
+    for (let index = 1; index < e; index += 1) {
+      powered *= n;
+    }
+    return powered;
+  });
+  mockFunctions.factorial.mockImplementation((n) => {
+    if (n === 1 || n === 0) return 1;
+    let factor = 1;
+    for (let index = 1; index <= n; index += 1) {
+      factor *= index;
+    }
+    return factor;
+  });
   
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
