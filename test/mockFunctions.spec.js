@@ -1,3 +1,4 @@
+const { factorial } = require('../src/mockFunctions');
 const mockFunctions = require('../src/mockFunctions');
 
 /*
@@ -16,7 +17,21 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
-  
+  let mockFunctions = jest.fn();
+  mockFunctions = {
+    add: (a, b) => a + b,
+    subtract: (a, b) => a - b,
+    multiply: (a, b) =>  a * b,
+    divide: (a, b) => a / b,
+    power: (a, b) => Math.pow(a, b),
+    factorial: function factorial (x) {
+      if (x > 1) {
+        return x * factorial(x -1);
+      }
+      return x;
+    }
+    
+  }
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
