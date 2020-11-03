@@ -18,7 +18,7 @@ describe('o retorno do telefonema', () => {
     expect(answerPhone()).resolves.toBe('Oi!');
   });
   test('ocupado', () => {
-    answerPhone.mockResolvedValue('Infelizmente não podemos atender...');
+    answerPhone.mockRejectedValue('Infelizmente não podemos atender...');
     expect(answerPhone()).rejects.toBe('Infelizmente não podemos atender...');
   });
 });
