@@ -43,7 +43,7 @@ describe('verifica o usuário', () => {
     ]
   };
 
-  url.returnApi(() => {
+  fetchURL.returnApi(() => {
     return mockedUser;
   });
 
