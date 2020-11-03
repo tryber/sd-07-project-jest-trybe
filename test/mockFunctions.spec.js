@@ -24,10 +24,15 @@ describe('verifica as funções e os mocks', () => {
     if (a === 0 && b === 0) {
       return 1;
     } else {
-      Math.pow(a,b); 
+      (a ** b);
     }
   });
-  mockFunctions.factorial = jest.fn().mockImplementation(a => Math.factorial(a));
+  mockFunctions.factorial = jest.fn().mockImplementation(a => {
+    let fact = 1;
+    for (let index = 1; index <= a; index += 1) {
+      fact *= index;
+    }
+  });
   
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
