@@ -11,9 +11,9 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone https://github.com/tryber/sd-0x-project-jest.git`.
+  * `git clone https://github.com/tryber/sd-07-project-jest-trybe.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0x-project-jest`
+    * `cd sd-07-project-jest-trybe`
 
 2. Crie uma branch a partir da branch `master`
   * Verifique que você está na branch `master`
@@ -22,7 +22,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
     * Exemplo: `git checkout master`
   * Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
     * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-    * Exemplo: `git checkout -b joaozinho-project-jest`
+    * Exemplo: `git checkout -b joaozinho-project-jest-trybe`
 
 4. Quando fizer mudanças, adicione-as ao _stage_ do Git e faça um `commit`
   * Verifique que as mudanças ainda não estão no _stage_
@@ -37,16 +37,16 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
         * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
 
 5. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin joaozinho-project-jest`
+  * Usando o exemplo anterior: `git push -u origin joaozinho-project-jest-trybe`
 
 6. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-project-jest/pulls)
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-07-project-jest-trybe/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
   * Clique no botão verde _"Create pull request"_
   * Adicione uma descrição para o _Pull Request_, um título claro que o identifique, e clique no botão verde _"Create pull request"_
   * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-project-jest/pulls) e confira que o seu _Pull Request_ está criado
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-07-project-jest-trybe/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
@@ -156,7 +156,7 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-07`
 
 Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
