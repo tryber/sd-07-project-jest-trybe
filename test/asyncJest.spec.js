@@ -10,11 +10,15 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-describe("o retorno do telefonema", () => {
-  test("atende", () => {
+jest.mock('../src/asyncJest');
 
+describe('o retorno do telefonema', () => {
+  test('atende', () => {
+    answerPhone.mockResolvedValue('Oi!');
+    expect(answerPhone()).resolves.toBe('Oi!');
   });
-  test("ocupado", () => {
-
+  test('ocupado', () => {
+    answerPhone.mockResolvedValue('Infelizmente não podemos atender...');
+    expect(answerPhone()).rejects.toBe('Infelizmente não podemos atender...');
   });
 });
