@@ -16,7 +16,7 @@ describe("o retorno do telefonema", () => {
     done();
   });
   test("ocupado", done => {
-    expect(answerPhone(true)).toBeFalsy();
+    expect(answerPhone(false)).toBeFalsy();
     done();
   });
 });
