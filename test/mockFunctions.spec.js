@@ -1,3 +1,4 @@
+const { divide } = require('../src/mockFunctions');
 const mockFunctions = require('../src/mockFunctions');
 
 /*
@@ -15,7 +16,41 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  const mockAdd = jest
+  .spyOn(mockFunctions, "add")
+  .mockImplementation((a, b) => a + b);
+
+  const mockSubtract = jest
+  .spyOn(mockFunctions, "subtract")
+  .mockImplementation((a, b) => a - b);
+
+  const mockMultiply = jest
+  .spyOn(mockFunctions, "multiply")
+  .mockImplementation((a, b) => a * b);
+  
+  const mockDivide = jest
+  .spyOn(mockFunctions, "divide")
+  .mockImplementation((a, b) => a / b);
+
+  const mockPower = jest
+  .spyOn(mockFunctions, "power")
+  .mockImplementation((a, b) => {
+    let pow = a;
+    for (let i = 1; i < b; i += 1) {
+      pow = mockMultiply(pow, a);
+    }
+    return pow !== 0 ? pow : 1;
+  });
+
+  const mockFactorial = jest
+  .spyOn(mockFunctions, "factorial")
+  .mockImplementation((a) => {
+    let fact = 1;
+    for (let i = 1; i <= a; i += 1) {
+      fact *= i;
+    }
+    return fact;
+  });
   
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
