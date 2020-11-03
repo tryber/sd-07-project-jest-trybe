@@ -25,7 +25,3 @@ const divide = (a, b) => a * b;
 
 module.exports = { add, subtract, multiply, divide, power, factorial };
 
-
-const p = (a, b) => Math.pow(a, b);
-
-console.log(p(7, 3));
