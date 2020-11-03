@@ -11,11 +11,11 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe("o retorno do telefonema", () => {
-  test("atende", () => {
-    
+  test("atende",() => {
+  return answerPhone(true).then(result => expect(result).toEqual('Oi!'));
   });
   test("ocupado", () => {
-
-    // Insira seu teste assíncrono aqui
+    return answerPhone(false).catch(result => expect(result)
+    .toEqual('Infelizmente não podemos atender...'));
   });
 });
