@@ -21,6 +21,6 @@ describe("o retorno do telefonema", () => {
     setTimeout(() => {
     expect(answerPhone(false)).toMatch('Infelizmente não podemos atender...');
     done();
-  }, 3300);
+  }, 3000);
   });
 });
