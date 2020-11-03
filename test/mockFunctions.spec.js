@@ -15,13 +15,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
-  mockFunctions.add = jest.fn()
-  .mockReturnValueOnce(3)
-  .mockReturnValueOnce(45)
-  .mockReturnValueOnce(14)
-  .mockReturnValueOnce(-175)
-  .mockReturnValueOnce(33);
+  mockFunctions.add = jest.fn((a, b) => a + b);
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
@@ -31,12 +25,7 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.add(7, 26)).toEqual(33);
   });
 
-  mockFunctions.subtract = jest.fn()
-  .mockReturnValueOnce(864)
-  .mockReturnValueOnce(-350)
-  .mockReturnValueOnce(-52)
-  .mockReturnValueOnce(131)
-  .mockReturnValueOnce(-104);
+  mockFunctions.subtract = jest.fn((a, b) => a - b);
 
   test('testa função subtract', () => {
     expect(mockFunctions.subtract(899, 35)).toEqual(864);
@@ -46,12 +35,7 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.subtract(-133, -29)).toEqual(-104);
   });
 
-  mockFunctions.multiply = jest.fn()
-  .mockReturnValueOnce(2)
-  .mockReturnValueOnce(0)
-  .mockReturnValueOnce(-36)
-  .mockReturnValueOnce(84)
-  .mockReturnValueOnce(437);
+  mockFunctions.multiply = jest.fn((a, b) => a * b);
 
   test('testa função multiply', () => {
     expect(mockFunctions.multiply(1, 2)).toEqual(2);
@@ -61,12 +45,7 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.multiply(19, 23)).toEqual(437);
   });
 
-  mockFunctions.divide = jest.fn()
-  .mockReturnValueOnce(13)
-  .mockReturnValueOnce(-380)
-  .mockReturnValueOnce(6)
-  .mockReturnValueOnce(3)
-  .mockReturnValueOnce(121);
+  mockFunctions.divide = jest.fn((a, b) => a / b);
 
   test('testa função divide', () => {
     expect(mockFunctions.divide(169, 13)).toEqual(13);
@@ -76,12 +55,9 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.divide(1331, 11)).toEqual(121);
   });
 
-  mockFunctions.power = jest.fn()
-  .mockReturnValueOnce(100)
-  .mockReturnValueOnce(1024)
-  .mockReturnValueOnce(3125)
-  .mockReturnValueOnce(1)
-  .mockReturnValueOnce(1);
+  mockFunctions.power = jest.fn((a, b) => {
+    return Math.pow(a, b);
+  });
 
   test('testa função power', () => {
     expect(mockFunctions.power(10, 2)).toEqual(100);
@@ -91,12 +67,13 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.power(0, 0)).toEqual(1);
   });
 
-  mockFunctions.factorial = jest.fn()
-  .mockReturnValueOnce(120)
-  .mockReturnValueOnce(3628800)
-  .mockReturnValueOnce(6)
-  .mockReturnValueOnce(40320)
-  .mockReturnValueOnce(2);
+  mockFunctions.factorial = jest.fn((a) => {
+    let accumulator = a;
+    for (let i = a-1; i > 0 ; i -= 1) {
+      accumulator *= i;
+    }
+    return accumulator;
+  });
 
   test('testa função factorial', () => {
     expect(mockFunctions.factorial(5)).toEqual(120);
