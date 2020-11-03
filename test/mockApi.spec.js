@@ -32,12 +32,6 @@ describe('verifica o usuário', () => {
     login: { username: 'tunicao123', password: '1234567890' }
   };
 
-  // api.fetchURL = jest.fn(() => {
-  //   Promise.resolve({
-  //     json: () => Promise.resolve(tunico),
-  //   })
-  // });
-
   api.fetchURL = jest.fn().mockResolvedValue(tunico);
   test('verifica se o usuário é o tunico', async () => {
     return api.fetchURL().then((user) => {
