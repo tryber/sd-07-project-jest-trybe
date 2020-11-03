@@ -12,8 +12,8 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", (termina) => {
-    expect(answerPhone(true)).resolves.toMatch('Oi!');// qual o retorno
-    // quando for true me a resposta do resolves é a mesma que a da func
+    expect(answerPhone(true)).resolves.toMatch('Oi!');
+    // quando for true a resposta do resolves é a mesma que foi determinada
     // toMatch serve como o toBe para me trazer a resposta
     termina()
   });
