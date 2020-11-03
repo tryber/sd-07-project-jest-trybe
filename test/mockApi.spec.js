@@ -25,7 +25,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('verifica o usuário', () => {
   const tunicoJSON = {
     gender: 'male',
-    name: { title: 'Mr', first: 'Ântonio', last: 'Britto' },
+    name: { title: 'Mr', first: 'Antônio', last: 'Britto' },
     location: {
       street: { number: 1299, name: 'Rochestown Road' },
       city: 'Birr',
