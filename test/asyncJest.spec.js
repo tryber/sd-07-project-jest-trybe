@@ -13,16 +13,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe("o retorno do telefonema", () => {
   test("atende", () => {
     // Insira seu teste assíncrono aqui
-    answerPhone(true, (result) => {
-      expect(result).toBe('oi!');
-      done();
-    });
+   return expect(answerPhone(true)).resolves.toBe('Oi!');
   });
   test("ocupado", () => {
     // Insira seu teste assíncrono aqui
-    answerPhone(false, (result) => {
-      expect(result).toBe('Infelizmente não podemos atender...');
-      done();
-    });
+    return expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
   });
 });
