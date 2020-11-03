@@ -23,11 +23,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  api.fetchURL = jest.fn().mockResolvedValue({
+  api.fetchURL = jest.fn().mockResolvedValueOnce({
     // mockReturnValue :
     // Aceita um valor que será retornado sempre que a função simulada for chamada.
     // mockResolvedValue:
     // Útil para simular funções assíncronas em testes assíncronos:
+    // mockResolvedValueOnce:
+    // Útil para resolver valores diferentes em várias chamadas assíncronas:
       gender: 'male',
       name: {
         first: 'Antônio',
