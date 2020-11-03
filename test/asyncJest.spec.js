@@ -12,7 +12,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", async () => {
-    await expect (answerPhone(true)).resolves.toBe('Oi!'
+    await expect (answerPhone(true)).resolves.toBe('Oi!')
   });
   test("ocupado", async () => {
     await expect (answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...')
