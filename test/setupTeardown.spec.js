@@ -25,7 +25,7 @@ beforeEach(() => {
 afterEach(() => {
   adventure.specialists.forEach((element) => {
     console.log(`Parabéns pela vitória ${element.nome}, ${element.classe}`)
-  }); 
+  });
 });
 
 describe('quem sobreviveu?', () => {
