@@ -32,6 +32,7 @@ describe('verifica as funções e os mocks', () => {
     for (let index = 1; index <= a; index += 1) {
       fact *= index;
     }
+    return fact;
   });
   
   test('testa função add', () => {
