@@ -12,11 +12,11 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", (done) => {
-    expect(answerPhone(true)).toBe('Oi!');
+    expect(answerPhone(true)).resolves.toBe('Oi!');
     done();
   });
   test("ocupado", (done) => {
-    expect(answerPhone(false)).toBe('Infelizmente não podemos atender...');
+    expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
     done();
   });
 });
