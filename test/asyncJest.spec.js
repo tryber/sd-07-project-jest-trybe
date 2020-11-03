@@ -18,7 +18,9 @@ describe("o retorno do telefonema", () => {
   });
 
   test("ocupado", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    return answerPhone(false).catch ((reject) => {
+      expect(reject).toBe('Infelizmente não podemos atender...');
+    
+    })
   });
 });
