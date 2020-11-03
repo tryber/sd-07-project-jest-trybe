@@ -13,10 +13,19 @@ O foco aqui é a utilização de mock functions.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
+jest.mock('../src/mockFunctions')
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
-  
+    mockFunctions.add.mockImplementation((a, b) => a + b)
+    mockFunctions.subtract.mockImplementation((a, b) => a - b)
+    mockFunctions.multiply.mockImplementation((a, b) => a * b)
+    mockFunctions.divide.mockImplementation((a, b) => a / b)
+// source: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/pow
+    mockFunctions.power.mockImplementation((a, b) => Math.pow(a, b));
+// source: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Fun%C3%A7%C3%B5es
+    const correctFatorial = number => number < 2 ? 1: number * correctFatorial(number - 1);
+    mockFunctions.factorial.mockImplementation(correctFatorial)
+
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
