@@ -63,7 +63,7 @@ describe('verifica o usuário', () => {
     nat: 'IE'
   }
 
-  api.fetchURL = jest.fn(() => Promise.resolve(userJson))
+  api.fetchURL = jest.fn(() => Promise.resolve(userJson));
 
   test('verifica se o usuário é o tunico', async () => {
     return api.fetchURL().then((user) => {
