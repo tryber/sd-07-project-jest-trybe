@@ -43,11 +43,11 @@ describe('verifica o usuário', () => {
     ]
   };
 
-  api.fetchURL(() => {
-    json: () => Promise.resolve(mockedUser);
-  });
 
   test('verifica se o usuário é o tunico', async () => {
+    fetchURL.mockImplematation(() => {
+      json: () => Promise.resolve(mockedUser);
+    });
     return api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
