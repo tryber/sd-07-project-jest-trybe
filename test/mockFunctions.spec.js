@@ -25,9 +25,7 @@ describe('verifica as funções e os mocks', () => {
     divide: (a, b) => a / b,
     power: (a, b) => Math.pow(a, b),
     factorial: function factorial(x) {
-      if (x === 0) {
-        return 1;
-     }
+      if (x === 0) return 1;
       return x * factorial(x-1);     
     }
   }
