@@ -25,9 +25,9 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.factorial.mockImplementation((a) => {
     // https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/
     let result = a;
-    if (a === 0 || a === 1) 
+    if (a === 0 || a === 1)
       return 1; 
-    while (a > 1) { 
+    while (a > 1) {
       a--;
       result *= a;
     }
