@@ -21,6 +21,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach( () => {
+    adventure.randomAttack();
+  } );
+
+  afterEach( () => {
+    console.log(adventure.specialists);
+  } )
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
@@ -35,6 +42,8 @@ describe('quem sobreviveu?', () => {
     expect(adventure.specialists.length).toBe(2);
   });
   test('depois da quinta aventura', () => {
-    expect(adventure.specialists.length).toBe(1);
+    expect(adventure.specialists.length).toBe(1);    
+
+    console.log(`O sobrevivente e campeão foi ${adventure.specialists[0].nome}, o ${adventure.specialists[0].classe}`)
   });
 });
