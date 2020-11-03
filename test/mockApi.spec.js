@@ -28,7 +28,7 @@ describe('verifica o usuário', () => {
   const mockedUser = {
     "results": [
       {
-        "gender": "Masculino",
+        "gender": "male",
         "name": {
           "first": "Antônio",
           "last": "Britto"
@@ -45,9 +45,11 @@ describe('verifica o usuário', () => {
 
 
   test('verifica se o usuário é o tunico', async () => {
-    fetchURL.mockImplematation(() => {
+    api.fetchURL = jest.fn();
+    api.fetchURL.mockResolvedValue (() => {
       json: () => Promise.resolve(mockedUser);
-    });
+    })
+    
     return api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
