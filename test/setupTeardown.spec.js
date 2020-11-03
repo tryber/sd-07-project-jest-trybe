@@ -21,6 +21,19 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach(() => adventure.randomAttack());
+
+  afterEach(() => {
+    const leftSpecialists = adventure.specialists.reduce(
+      (acc, { nome }, index, array) => {
+        const lastName = index === array.length - 1;
+        const nameConcat = acc + nome;
+        return !lastName ? `${nameConcat}, ` : `${nameConcat}.`;
+      },
+      ''
+    );
+    console.log(`Restaram os seguintes aventureiros: ${leftSpecialists}`);
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
