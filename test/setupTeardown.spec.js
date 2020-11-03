@@ -21,7 +21,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // My code bellow
+  
   beforeEach(() => {
     randomAttack();
   });
@@ -31,10 +31,9 @@ describe('quem sobreviveu?', () => {
   });
 
   afterAll(() => {
-    console.log(adventure.specialists[0].nome);
+    console.log(`Winner Winner Chicken Dinner:
+    ${adventure.specialists[0].nome} Is on fire`);
   });
-
-  // My code above
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
