@@ -25,6 +25,12 @@ describe('quem sobreviveu?', () => {
   beforeEach(() => {
     randomAttack()
   })
+  afterEach(() => {
+    console.log(`Specialists alive: ${adventure.specialists.length}`)
+  })
+  afterAll(() => {
+    console.log(`${adventure.specialists[0].nome} is alive!`)
+  })
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
