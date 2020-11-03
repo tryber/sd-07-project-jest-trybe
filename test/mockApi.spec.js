@@ -25,7 +25,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('verifica o usuário', () => {
   const requestReturn = {
     gender: 'male',
-    name: {title: 'Mr', first: 'Antonio', last: 'Brito'},
+    name: {title: 'Mr', first: 'Antônio', last: 'Brito'},
     location: {country: 'Brazil',},
     email: 'tunico@bol.com.br',
     login: {username: 'tunicao123', password: '1234567890',},
