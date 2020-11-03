@@ -43,8 +43,8 @@ describe('verifica o usuário', () => {
     ]
   };
 
-  fetchURL.returnApi(() => {
-    return mockedUser;
+  api.fetchURL(() => {
+    json: () => Promise.resolve(mockedUser);
   });
 
   test('verifica se o usuário é o tunico', async () => {
