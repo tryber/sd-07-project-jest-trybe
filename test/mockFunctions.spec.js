@@ -14,10 +14,21 @@ O foco aqui é a utilização de mock functions.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+jest.mock('../src/mockFunctions');
+
 describe('verifica as funções e os mocks', () => {
-  const add = jest
-    .spyOn(mockFunctions, 'add')
-    .mockImplementation((a, b) => a + b);
+  mockFunctions.add.mockImplementation((a, b) => a + b);
+  mockFunctions.subtract.mockImplementation((a, b) => a - b);
+  mockFunctions.multiply.mockImplementation((a, b) => a * b);
+  mockFunctions.divide.mockImplementation((a, b) => a / b);
+  mockFunctions.power.mockImplementation((a, b) => a ** b);
+  mockFunctions.factorial.mockImplementation((a) => {
+    let fact = 1;
+    for (let i = 1; i <= a; i += 1) {
+      fact *= i;
+    }
+    return fact;
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
@@ -26,11 +37,6 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.add(13, -188)).toEqual(-175);
     expect(mockFunctions.add(7, 26)).toEqual(33);
   });
-
-  const subtract = jest
-  .spyOn(mockFunctions, 'subtract')
-  .mockImplementation((a, b) => a - b);
-
   test('testa função subtract', () => {
     expect(mockFunctions.subtract(899, 35)).toEqual(864);
     expect(mockFunctions.subtract(-17, 333)).toEqual(-350);
@@ -38,11 +44,6 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.subtract(23, -108)).toEqual(131);
     expect(mockFunctions.subtract(-133, -29)).toEqual(-104);
   });
-
-  const multiply = jest
-    .spyOn(mockFunctions, 'multiply')
-    .mockImplementation((a, b) => a * b);
-
   test('testa função multiply', () => {
     expect(mockFunctions.multiply(1, 2)).toEqual(2);
     expect(mockFunctions.multiply(0, 5)).toEqual(0);
@@ -50,11 +51,6 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.multiply(-12, -7)).toEqual(84);
     expect(mockFunctions.multiply(19, 23)).toEqual(437);
   });
-
-  const divide = jest
-  .spyOn(mockFunctions, 'divide')
-  .mockImplementation((a, b) => a / b);
-
   test('testa função divide', () => {
     expect(mockFunctions.divide(169, 13)).toEqual(13);
     expect(mockFunctions.divide(-1900, 5)).toEqual(-380);
@@ -62,11 +58,6 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.divide(729, 243)).toEqual(3);
     expect(mockFunctions.divide(1331, 11)).toEqual(121);
   });
-
-  const power = jest
-    .spyOn(mockFunctions, 'power')
-    .mockImplementation((a, b) => a ** b);
-
   test('testa função power', () => {
     expect(mockFunctions.power(10, 2)).toEqual(100);
     expect(mockFunctions.power(2, 10)).toEqual(1024);
@@ -74,17 +65,6 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.power(1, 10)).toEqual(1);
     expect(mockFunctions.power(0, 0)).toEqual(1);
   });
-
-  constfactorial = jest
-  .spyOn(mockFunctions, 'factorial')
-  .mockImplementation((a) => {
-    let fact = 1;
-    for (let i = 1; i <= a; i += 1) {
-      fact *= i;
-    }
-    return fact;
-  });
-
   test('testa função factorial', () => {
     expect(mockFunctions.factorial(5)).toEqual(120);
     expect(mockFunctions.factorial(10)).toEqual(3628800);
