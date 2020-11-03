@@ -1,5 +1,5 @@
 const mockFunctions = require('../src/mockFunctions');
-jest.mock('../src/mockFunctions')
+jest.mock('../src/mockFunctions');
 
 /*
 Criamos uma série de funções com eficiência duvidosa.
@@ -56,9 +56,9 @@ describe('verifica as funções e os mocks', () => {
   });
   test('testa função power', () => {
     mockFunctions.power.mockImplementation((a, b) => {
-      let pow = a
+      let pow = a;
       if (a === 0 && b === 0) {
-        return 1
+        return 1;
       }
       for (let index = 0; index < b - 1; index += 1) {
         pow *= a;
