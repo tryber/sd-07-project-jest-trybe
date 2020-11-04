@@ -26,7 +26,6 @@ describe('verifica as funções e os mocks', () => {
     return result;
   });
   mockFunctions.power.mockImplementation((a, b) => Math.pow(a, b));
-});
 test('testa função add', () => {
   expect(mockFunctions.add(1, 2)).toEqual(3);
   expect(mockFunctions.add(8, 37)).toEqual(45);
@@ -68,4 +67,5 @@ test('testa função factorial', () => {
   expect(mockFunctions.factorial(3)).toEqual(6);
   expect(mockFunctions.factorial(8)).toEqual(40320);
   expect(mockFunctions.factorial(2)).toEqual(2);
+});
 });
