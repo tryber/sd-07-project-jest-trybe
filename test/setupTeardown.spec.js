@@ -21,6 +21,20 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  // https://app.betrybe.com/course/fundamentals/js-unit-tests/jest-async
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
+  
+  afterEach(() => {
+    let msg = [];
+    adventure.specialists.forEach(specialist => msg.push(` ${specialist.nome}`));
+    if (adventure.specialists.length !== 1) {
+      console.log('Adventurers remaining:' + msg);
+    } else {
+      console.log('Congratulations' + msg + ' !!!');
+    }
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
