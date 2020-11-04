@@ -1,3 +1,4 @@
+const { randomAttack } = require('../src/setupTeardown');
 const adventure = require('../src/setupTeardown');
 /*
 Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
@@ -19,8 +20,14 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+const apenasUmPatinhoVoltouDeLa = () => {
+  randomAttack();
+};
+
 describe('quem sobreviveu?', () => {
-  beforeEach() = {}
+  beforeEach(() => {
+    apenasUmPatinhoVoltouDeLa();
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
