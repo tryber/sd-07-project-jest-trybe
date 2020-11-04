@@ -21,9 +21,9 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
-  beforeEach(() => {
-    adventure.randomAttack();
-  });
+  // beforeEach(() => {
+  //   adventure.randomAttack();
+  // });
   // Do not need to reset the test with teardown
   // afterEach(() => {
   //   adventure.randomAttack();
