@@ -25,26 +25,23 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 const mockedUser = {
-  "gender": "male",
-  "name": {
-    "first": "Antônio",
-    "last": "Britto"
+  gender: "male",
+  name: {
+    first: "Antônio",
+    last: "Britto"
     },
-  "country": "Brasil",
-  "email": "tunico@bol.com.br",
-  "login": {
-    "username": "tunicao123",
-    "password": "1234567890"
+  country: "Brasil",
+  email: "tunico@bol.com.br",
+  login: {
+    username: "tunicao123",
+    password: "1234567890"
     }
 };
 
 describe('verifica o usuário', () => {
 
   test('verifica se o usuário é o tunico', async () => {
-    api.fetchURL = jest.fn();
-    api.fetchURL.mockResolvedValue(() => Promise.resolve({
-        json: () => Promise.resolve(mockedUser),
-    }));
+    api.fetchURL.mockResolvedValue(mockedUser);
     
   return api.fetchURL().then((user) => {
     expect(user.gender).toEqual('male');
