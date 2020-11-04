@@ -28,7 +28,7 @@ describe('quem sobreviveu?', () => {
       return actual.nome;
     });   
     survivors.forEach((acc) => {
-      console.log(`Sobreviveram até aqui ${acc}`);
+      console.log(`Survived so far ${acc}`);
     })
     
   });
