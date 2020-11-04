@@ -14,7 +14,7 @@ describe("o retorno do telefonema", () => {
   // Insira seu teste assíncrono aqui
   test("atende", async (done) => {
     const expected = await answerPhone(true);
-    expected(expected).toBe('Oi!');
+    expect(expected).toBe('Oi!');
     done()
   });
   test("ocupado", () => {
