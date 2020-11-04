@@ -24,7 +24,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 jest.mock('../src/mockApi');
 
-api.fetchURL.mockResolvedValue ({
+api.fetchURL.mockResolvedValue({
   gender: 'male',
     name: {
       first: 'Antônio',
