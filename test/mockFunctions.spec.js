@@ -15,8 +15,22 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  mockFunctions.add = jest.fn((a, b) => a + b) // or jest.fn().mockImplementation((a, b) => a + b);
+  mockFunctions.subtract = jest.fn((a, b) => a - b) // or jest.fn().mockImplementation((a, b) => a - b);
+  mockFunctions.multiply = jest.fn((a, b) => a * b) // or jest.fn().mockImplementation((a, b) => a * b);
+  mockFunctions.divide = jest.fn((a, b) => a / b) // or jest.fn().mockImplementation((a, b) => a / b);
   
+  // the code bellow use the references: 
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/pow 
+  mockFunctions.power = jest.fn((a, b) => Math.pow (a, b)) // or jest.fn().mockImplementation((a, b) => Math.pow (a, b));
+  
+  // the code bellow use the references: 
+  //  https://javascript.info/task/factorial
+  // https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/      
+  mockFunctions.factorial = jest.fn(function fact(a) {  // or jest.fn().mockImplementation(function fact(a) {
+    return (a != 1) ? a * fact(a - 1) : 1;                     //return (a != 1) ? a * fact(a - 1) : 1;
+  });                                                   //  });
+
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
