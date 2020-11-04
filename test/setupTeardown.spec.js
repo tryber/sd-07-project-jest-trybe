@@ -4,7 +4,7 @@ Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma
 O grupo parte em direção ao sucesso, mas,
 devido a ameaça de criaturas temíveis, o grupo não chegará inteiro ao fim.
 Após cada aventura um de nossos aventureiros cairá.
-Cada um dos testes abaixo verifica a quantidade de aventureiros após cada iteração.
+Cada um dos testes abaixo verifica ha quantidade de aventureiros após cada iteração.
 Sua missão aqui é:
 
   - Use a função randomAttack do objeto adventure
@@ -20,7 +20,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  beforeEach() = {}
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
