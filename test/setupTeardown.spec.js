@@ -17,10 +17,20 @@ Sua missão aqui é:
 PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
+
+Para realizar este projeto consultei o projeto do colega Ygor Fonseca.
 */
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach(() => {
+    adventure.randomAttack();
+    console.log(adventure.specialists.length);
+  });
+  afterAll(() => {
+    console.log(adventure.specialists[0]);
+  });
+
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);

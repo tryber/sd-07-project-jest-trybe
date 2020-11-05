@@ -8,15 +8,21 @@ Complete o código abaixo para testar as situações em que
 a função recebe como parâmetro true e false, respectivamente.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
+
+Para realizar este projeto consultei o projeto do colega Ygor Fonseca.
 */
 
 describe("o retorno do telefonema", () => {
-  test("atende", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+  // Insira seu teste assíncrono aqui
+  test("atende", async (done) => {
+    const expected = await answerPhone(true);
+    expect(expected).toBe('Oi!');
+    done()
   });
   test("ocupado", () => {
-    assert.fail();
     // Insira seu teste assíncrono aqui
+    return answerPhone(false).catch(error => {
+      expect(error).toBe('Infelizmente não podemos atender...');
+    });
   });
 });
