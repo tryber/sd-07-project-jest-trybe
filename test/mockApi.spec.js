@@ -31,7 +31,7 @@ describe('verifica o usuário', () => {
       resolve({
         gender: 'male',
         name: {
-          first: 'Antonio',
+          first: 'Antônio',
           last: 'Britto'
         },
         location: {
