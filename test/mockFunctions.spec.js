@@ -24,7 +24,7 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.divide.mockImplementation((a, b) => a / b);
   mockFunctions.power.mockImplementation((a, b) => Math.pow(a, b));
   mockFunctions.factorial.mockImplementation((a) => (a < 2) ? 1 : mockFunctions.factorial(a - 1) * a);
-  // f=n=>(n<2)?1:f(n-1)*n
+  // f=n=>(n<2)?1:f(n-1)*n - site: https://qastack.com.br/programming/3959211/what-is-the-fastest-factorial-function-in-javascript
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
