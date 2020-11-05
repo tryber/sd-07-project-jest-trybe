@@ -19,8 +19,11 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+afterAll(() => adventure.specialists.forEach(({ nome }) => console.log(nome)));
+
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  beforeEach(() => console.log(adventure.specialists));
+  beforeEach(() => adventure.randomAttack());
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
