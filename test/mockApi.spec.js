@@ -33,7 +33,8 @@ describe("verifica o usuário", () => {
       password: "1234567890",
     },
   };
-  api.fetchURL = jest.fn().mockReturnValue(mockResponse);
+  // api.fetchURL = jest.fn().mockReturnValue(mockResponse);
+  api.fetchURL = jest.fn().mockResolvedValue(mockResponse);
   it("verifica se o usuário é o tunico", async (done) => {
     const response = await api.fetchURL();
     expect(response.gender).toBe("male");
