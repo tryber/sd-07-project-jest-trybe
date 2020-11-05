@@ -22,7 +22,8 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-describe('verifica o usuário', () => {  
+describe('verifica o usuário', () => {
+  // selecionei só a parte de interesse do objeto que estava no ReadMe.md
   api.fetchURL = jest.fn().mockResolvedValue({
     gender: 'male',
     name: { title: 'Ms', first: 'Antônio', last: 'Britto' },
