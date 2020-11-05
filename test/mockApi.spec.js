@@ -39,7 +39,7 @@ describe('verifica o usuário', () => {
         },
         email: 'tunico@bol.com.br',
         loguin: {
-          username: 'tinicao123',
+          username: 'tunicao123',
           password: '1234567890'
         }
       });
