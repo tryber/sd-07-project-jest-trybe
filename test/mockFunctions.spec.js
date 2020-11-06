@@ -1,4 +1,3 @@
-const { factorial } = require('../src/mockFunctions');
 const mockFunctions = require('../src/mockFunctions');
 
 /*
