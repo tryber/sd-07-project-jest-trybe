@@ -1,3 +1,4 @@
+const { subtract, multiply, divide, add } = require('../src/mockFunctions');
 const mockFunctions = require('../src/mockFunctions');
 
 /*
@@ -13,9 +14,17 @@ O foco aqui é a utilização de mock functions.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
+jest.mock('../src/mockFunctions');
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
+  mockFunctions.add.mockImplementation((a, b) => a + b);
+  mockFunctions.subtract.mockImplementation((a, b) => a - b);
+  mockFunctions.multiply.mockImplementation((a, b) => a * b);
+  mockFunctions.divide.mockImplementation((a, b) => a / b);
+  mockFunctions.power.mockImplementation((a, b) => Math.pow(a, b));
+  mockFunctions.factorial.mockImplementation((a) => (a < 2) ? 1 : mockFunctions.factorial(a - 1) * a);
+  // f=n=>(n<2)?1:f(n-1)*n - site: https://qastack.com.br/programming/3959211/what-is-the-fastest-factorial-function-in-javascript
   
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
