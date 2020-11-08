@@ -1,7 +1,6 @@
 const { fetchURL } = require('../src/mockApi');
 const mockApi = require('../src/mockApi');
 
-
 /*
 A função fetchURL retorna um JSON com informações de um usuário aleatório buscadas da API 'randomuser.me'.
 No entanto, nos testes abaixo, queremos que todas as vezes que chamarmos a API a resposta contenha as informações do nosso adminis..Cof! Cof!.. programador favorito, Tunicão.
@@ -33,7 +32,7 @@ describe('verifica o usuário', () => {
     login: {username: 'tunicao123', password : '1234567890'}
   };
 
-  mockApi.fetchURL = jest.fn().mockResolvedVAlue(usuario);
+  mockApi.fetchURL = jest.fn().mockResolvedValue(usuario);
 
 
 
