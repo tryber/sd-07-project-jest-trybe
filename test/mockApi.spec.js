@@ -1,5 +1,5 @@
 const { fetchURL } = require('../src/mockApi');
-const api = require('../src/mockApi');
+const mockApi = require('../src/mockApi');
 
 
 /*
@@ -25,7 +25,6 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
   const usuario = {
     gender : 'male',
     name: {first : 'Antônio', last : 'Britto'},
@@ -34,7 +33,7 @@ describe('verifica o usuário', () => {
     login: {username: 'tunicao123', password : '1234567890'}
   };
 
-  api.fetchURL = jest.fn().mockResolvedVAlue(usuario);
+  mockApi.fetchURL = jest.fn().mockResolvedVAlue(usuario);
 
 
 
