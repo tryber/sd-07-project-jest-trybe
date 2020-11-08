@@ -1,3 +1,4 @@
+const { fetchURL } = require('../src/mockApi');
 const api = require('../src/mockApi');
 
 
@@ -32,6 +33,7 @@ describe('verifica o usuário', () => {
     email: 'tunico@bol.com.br' ,
     login: {username: 'tunicao123', password : '1234567890'}
   };
+
   api.fetchURL = jest.fn().mockResolvedVAlue(usuario);
 
 
