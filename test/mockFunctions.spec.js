@@ -37,13 +37,14 @@ describe('verifica as funções e os mocks', () => {
   .mockImplementation((a, b) => {
     let pow = a;
     pow **= b;
+    return pow;
   });
 
   mockFunctions.factorial = jest
   .fn()
   .mockImplementation(a => {
     if (a > 1) {
-      return a * factorial(n - 1)
+      return a * factorial(a - 1)
     } 
     return a 
   });
