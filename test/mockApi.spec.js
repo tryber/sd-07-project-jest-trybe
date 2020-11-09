@@ -35,7 +35,8 @@ describe('verifica o usuário', () => {
     }
   };
 
-  api.fetchURL
+  fetchURL = jest
+  .fn()
   .mockImplementation(() => Promise.resolve ({
     Json: () => {
      return Promise.resolve(user);
