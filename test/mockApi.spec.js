@@ -1,4 +1,3 @@
-const { fetchURL } = require('../src/mockApi');
 const api = require('../src/mockApi');
 
 /*
@@ -35,7 +34,7 @@ describe('verifica o usuário', () => {
     }
   };
 
-  fetchURL = jest
+  api.fetchURL = jest
   .fn()
   .mockImplementation(() => Promise.resolve ({
     Json: () => {
