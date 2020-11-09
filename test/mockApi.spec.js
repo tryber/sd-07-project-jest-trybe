@@ -36,11 +36,7 @@ describe('verifica o usuário', () => {
 
   api.fetchURL = jest
   .fn()
-  .mockImplementation(() => Promise.resolve ({
-    Json: () => {
-     return Promise.resolve(user);
-    }
-  }));
+  .mockResolvedValue(user);
 
   test('verifica se o usuário é o tunico', async () => {
     return api.fetchURL().then((user) => {
