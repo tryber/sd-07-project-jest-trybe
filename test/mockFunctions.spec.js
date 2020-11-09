@@ -16,7 +16,20 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
+  mockFunctions.add = jest.fn((a, b) => a + b);
+  mockFunctions.subtract = jest.fn((a, b) => a - b);
+  mockFunctions.multiply = jest.fn((a, b) => a * b);
+  mockFunctions.divide = jest.fn((a, b) => a / b);
+  mockFunctions.power = jest.fn((a, b) => Math.pow(a, b));
   
+  // https://stackoverflow.com/questions/53884215/are-there-any-build-in-methods-in-javascript-for-finding-the-factorial-of-a-numb
+  mockFunctions.factorial = jest.fn(a => {
+    for (let i = a - 1; i >= 1; i--) {
+      a = a * i;
+    }
+    return a;
+  })
+
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
