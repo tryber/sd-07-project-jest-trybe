@@ -24,7 +24,7 @@ describe('verifica as funções e os mocks', () => {
     [...Array(n + 1).keys()]
     .slice(1)
     .reduce((acc, cur) => acc * cur, 1));
-    
+
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
