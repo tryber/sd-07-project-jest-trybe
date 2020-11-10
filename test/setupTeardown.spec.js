@@ -19,21 +19,27 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+//Project ready
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach(() => adventure.randomAttack());
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
+
   test('depois da segunda aventura', () => {
     expect(adventure.specialists.length).toBe(4);
   });
+
   test('depois da terceira aventura', () => {
     expect(adventure.specialists.length).toBe(3);
   });
+
   test('depois da quarta aventura', () => {
     expect(adventure.specialists.length).toBe(2);
   });
+
   test('depois da quinta aventura', () => {
     expect(adventure.specialists.length).toBe(1);
   });
