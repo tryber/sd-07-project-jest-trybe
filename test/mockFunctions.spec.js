@@ -1,3 +1,4 @@
+const { add, subtract, divide, multiply, factorial, power } = require('../src/mockFunctions');
 const mockFunctions = require('../src/mockFunctions');
 
 /*
@@ -13,6 +14,20 @@ O foco aqui é a utilização de mock functions.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
+
+jest.mock('../src/mockFunctions');
+add.mockImplementation((a, b) => a + b);
+subtract.mockImplementation((a, b) => a - b);
+divide.mockImplementation((a, b) => a / b);
+multiply.mockImplementation((a, b) => a * b);
+power.mockImplementation((a, b) => a ** b);
+factorial.mockImplementation((a) => {
+  let fact = a;
+  for (let i = 1; i < a; i ++) {
+    fact *= i;
+  }
+  return fact;
+});
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
