@@ -24,10 +24,7 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.divide.mockImplementation((a, b) => a / b);
   mockFunctions.power.mockImplementation((a, b) => a ** b);
   const num = mockFunctions.factorial.mockImplementation((a) => {
-    if (a > 1) {
-      return a * num(a - 1);
-    }
-    return a;
+    return a > 1 ? a * num(a - 1) : a ;
   });
 
 //https://blog.matheuscastiglioni.com.br/memorizando-funcoes-em-javascript/#:~:text=return%20n%20*%20fatorial(n%20%2D%201)%20%3A%20Caso%20o,o%20anterior%20do%20n%C3%BAmero%20atual.
