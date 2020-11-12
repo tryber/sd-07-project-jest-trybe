@@ -21,12 +21,25 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
+// const fetch = require('node-fetch');
+// jest.mock('node-fetch')
 
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
+  
 
-  test('verifica se o usuário é o tunico', async () => {
-    return api.fetchURL().then((user) => {
+  const user = {
+    gender: 'male',
+    name: {first: 'Antônio', last: 'Britto'},
+    location: {country: 'Brazil'},
+    email: 'tunico@bol.com.br',
+    login: {username: 'tunico123', password: '1234567890'},
+  };
+
+  test('verifica se o usuário é o tunico', () => {
+    api.fetchURL = jest.fn().mockReturnValue(user);
+
+    api.fetchURL((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
       expect(user.name.last).toEqual('Britto');
