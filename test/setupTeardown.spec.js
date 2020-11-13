@@ -20,7 +20,16 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+
+    beforeEach(() => {
+    console.log(adventure.specialists);
+    adventure.randomAttack();
+  });
+
+// beforeEach():
+// Executa uma função antes que cada um dos testes neste arquivo seja executado.
+// Se a função retorna uma promessa, Jest aguarda essa promessa resolver antes de executar o teste.
+// https://deltice.github.io/jest/docs/pt-BR/api.html
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);

@@ -15,9 +15,25 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
-  
-  test('testa função add', () => {
+  mockFunctions.add = jest.fn().mockImplementation((a, b) => a + b);
+// mockImplementation:
+// https://jestjs.io/docs/en/mock-function-api#mockfnmockimplementationfn
+// consultei o repositorio de Leandro Kauru para implementaçao desta funçao
+// https://github.com/tryber/sd-07-project-jest-trybe/blob/06493fe83405769c35931e12d190b0dbac0be45b/test/mockFunctions.spec.js
+  mockFunctions.subtract = jest.fn().mockImplementation((a, b) => a - b);
+  mockFunctions.multiply = jest.fn().mockImplementation((a, b) => a * b);
+  mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
+  mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
+// https://imasters.com.br/desenvolvimento/conheca-o-operador-exponencial-javascript
+  mockFunctions.factorial = jest.fn().mockImplementation((a) => {
+    let acc = 1;
+for ( i = 1; i<=a; i+=1){
+acc*=i
+}
+return acc
+});
+
+ test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
     expect(mockFunctions.add(-11, 25)).toEqual(14);
