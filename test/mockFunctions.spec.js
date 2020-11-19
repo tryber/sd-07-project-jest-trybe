@@ -1,4 +1,5 @@
 const mockFunctions = require('../src/mockFunctions');
+jest.mock("../src/mockFunctions");
 
 /*
 Criamos uma série de funções com eficiência duvidosa.
@@ -33,6 +34,7 @@ describe('verifica as funções e os mocks', () => {
     }
     return fact;
   });  
+  
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
