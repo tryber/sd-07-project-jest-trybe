@@ -1,5 +1,4 @@
 const mockFunctions = require('../src/mockFunctions');
-const { add } = require('../src/mockFunctions');
 
 /*
 Criamos uma série de funções com eficiência duvidosa.
