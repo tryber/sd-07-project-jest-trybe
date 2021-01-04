@@ -19,7 +19,7 @@ describe("o retorno do telefonema", () => {
   });
   test("ocupado", async () => {
     // assert.fail();
-    const answer = await answerPhone(false)
+    // Insira seu teste assíncrono aqui
     expect.assertions(1);
     await expect(answerPhone(false)).rejects.toEqual('Infelizmente não podemos atender...');
   });
