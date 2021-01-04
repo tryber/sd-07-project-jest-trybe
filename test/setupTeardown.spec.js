@@ -20,6 +20,12 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
+  beforeEach(() => {
+    randomAttack()
+  })
+  afterEach(() => {
+    console.log(adventure.specialists.map(specialist => specialist.nome));
+  })
   // Adicione seu código aqui
 
   test('depois da primeira aventura', () => {
