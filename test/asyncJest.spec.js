@@ -13,13 +13,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", () => {
-    //assert.fail();
+    // assert.fail();
     // Insira seu teste assíncrono aqui
     return expect(answerPhone(true)).resolves.toEqual('Oi!');
   });
   test("ocupado", () => {
-    //assert.fail();
+    // assert.fail();
     // Insira seu teste assíncrono aqui
-    return expect(answerPhone(false)).reject.toEqual('Infelizmente não podemos atender...');
+    return expect(answerPhone(false)).rejects.toEqual('Infelizmente não podemos atender...');
   });
 });
